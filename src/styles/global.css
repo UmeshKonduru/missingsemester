@@ -1,24 +1,15 @@
 :root {
-    --bg-color: #f0f0f0;
-    --text-color: #333;
-    --nav-bg-color: #e0e0e0;
-    --nav-text-color: #333;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --nav-bg-color: #f0f0f0;
+    --nav-text-color: #333333;
 }
 
 [data-theme="dark"] {
     --bg-color: #1a1a1a;
-    --text-color: #f0f0f0;
+    --text-color: #ffffff;
     --nav-bg-color: #2a2a2a;
-    --nav-text-color: #f0f0f0;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #1a1a1a;
-        --text-color: #f0f0f0;
-        --nav-bg-color: #2a2a2a;
-        --nav-text-color: #f0f0f0;
-    }
+    --nav-text-color: #ffffff;
 }
 
 body {
@@ -28,6 +19,7 @@ body {
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header, main, footer {
@@ -37,6 +29,8 @@ header, main, footer {
 nav {
     background-color: var(--nav-bg-color);
     padding: 1rem;
+    color: var(--nav-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul {
