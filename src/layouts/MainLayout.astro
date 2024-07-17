@@ -29,25 +29,28 @@ const { title } = Astro.props;
             const themeToggle = document.getElementById('theme-toggle');
             const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-            function setTheme(theme) {
+            function setTheme(theme: 'light' | 'dark'): void {
                 document.body.classList.toggle('dark-theme', theme === 'dark');
                 localStorage.setItem('theme', theme);
             }
 
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                setTheme(newTheme);
-            });
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+                    const newTheme = (currentTheme === 'light' ? 'dark' : 'light') as 'light' | 'dark';
+                    setTheme(newTheme);
+                });
+            }
 
             // Set initial theme
-            const savedTheme = localStorage.getItem('theme');
+            const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
             if (savedTheme) {
                 setTheme(savedTheme);
             } else if (prefersDarkScheme.matches) {
                 setTheme('dark');
             }
         </script>
+
 
         <style>
             #theme-toggle {
