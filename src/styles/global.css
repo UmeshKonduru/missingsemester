@@ -7,6 +7,16 @@
     --nav-text-color: #333333;
     --accent-color: #4a90e2;
     --footer-bg-color: #f0f0f0;
+    --transition-speed: 0.3s;
+}
+
+* {
+    transition: color var(--transition-speed) ease,
+                background-color var(--transition-speed) ease;
+}
+
+button, a {
+    transition: none;
 }
 
 [data-theme="dark"] {
@@ -25,7 +35,6 @@ body {
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -71,7 +79,6 @@ nav ul li a {
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -79,7 +86,7 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Footer styles */
+/*
 footer {
     background-color: var(--footer-bg-color);
     color: var(--text-color);
@@ -119,6 +126,7 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+*/
 
 /* Theme toggle button */
 #theme-toggle {
