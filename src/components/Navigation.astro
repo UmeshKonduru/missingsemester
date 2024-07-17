@@ -1,16 +1,16 @@
 ---
 const navItems = [
-    { name: 'Home', url: '/missingsemester/' },
-    { name: 'About', url: '/missingsemester/about' },
-    { name: 'Resources', url: '/missingsemester/resources' },
-    { name: 'Contact', url: '/missingsemester/contact' },
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+    { name: 'Resources', url: '/resources' },
+    { name: 'Contact', url: '/contact' },
 ];
 ---
 
 <nav>
     <ul>
         {navItems.map(item => (
-            <li><a href={item.url}>{item.name}</a></li>
+            <li><a href={import.meta.env.BASE_URL + item.url}>{item.name}</a></li>
         ))}
     </ul>
 </nav>

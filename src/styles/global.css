@@ -5,6 +5,13 @@
     --nav-text-color: #333;
 }
 
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --nav-bg-color: #2a2a2a;
+    --nav-text-color: #f0f0f0;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #1a1a1a;
